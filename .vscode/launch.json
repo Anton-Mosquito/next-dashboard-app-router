@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Next Js: debug client-side",
+      "request": "launch",
+      "type": "msedge",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Next Js: debug server-side",
+      "request": "attach",
+      "type": "node",
+      "skipFiles": ["<node_internals>/**"],
+      "port": 9230
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Next Js: full stack debug",
+      "configurations": [
+        "Next Js: debug client-side",
+        "Next Js: debug server-side"
+      ],
+      "stopAll": true
+    }
+  ]
+}
