@@ -4,16 +4,22 @@
     {
       "name": "Next Js: debug client-side",
       "request": "launch",
-      "type": "msedge",
+      "type": "chrome",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "/turbopack/[project]/*": "${webRoot}/*"
+      }
     },
     {
       "name": "Next Js: debug server-side",
       "request": "attach",
       "type": "node",
       "skipFiles": ["<node_internals>/**"],
-      "port": 9230
+      "port": 9230,
+      "sourceMapPathOverrides": {
+        "/turbopack/[project]/*": "${webRoot}/*"
+      }
     }
   ],
   "compounds": [
